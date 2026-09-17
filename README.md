@@ -1,4 +1,4 @@
-# opencarbon
+# OpenCarbon
 
 A reverse-engineering study of Limited Run Games' **Carbon** emulation engine, as shipped in the
 Nintendo Switch release of *Shantae* (GBC), and a native Windows rebuild of it (`carbon-pc`).
