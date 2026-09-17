@@ -2,6 +2,7 @@
 # checkouts and build output stay local (see README.md for where they come from).
 /*
 !/.gitignore
+!/LICENSE
 !/README.md
 !/FINDINGS.md
 !/carbon-pc/
