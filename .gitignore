@@ -9,10 +9,11 @@
 !/ghidra/
 !/testresults/
 
-# carbon-pc: sources and test scripts only (no build/, no save/)
+# carbon-pc: sources, vendored upstream sources and test scripts only (no build/, no save/)
 /carbon-pc/*
 !/carbon-pc/CMakeLists.txt
 !/carbon-pc/src/
+!/carbon-pc/third_party/
 !/carbon-pc/tests/
 
 # tools: scripts only

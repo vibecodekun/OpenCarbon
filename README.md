@@ -14,6 +14,21 @@ identification and test-ROM results) is in [FINDINGS.md](FINDINGS.md).
 | GB/GBC core (`carbon-pc/src/gb`) | proven identical to the original with `tools/gbdiff` (opcode/memory/LCD/timer/IRQ fuzzing, frame-by-frame state and audio, all 169 blargg/mooneye ROMs) |
 | GBA core (libretro VBA-Next @ `252f801`) | **not integrated yet** (`carbon-pc/src/stub/GbaStubs.cpp`) |
 
+## Third-party sources included
+
+`carbon-pc/third_party/` holds unmodified upstream sources, byte-identical to the originals
+(`.gitattributes` turns off line-ending conversion there). Each keeps its own license.
+
+| Path | What it is | License | Used by Carbon |
+|---|---|---|---|
+| `Gb_Snd_Emu-0.1.4` | blargg's Gb_Snd_Emu 0.1.4 + Blip_Buffer 0.3.4, from http://www.slack.net/~ant/libs/ | LGPL 2.1 | yes, unmodified (verified by execution, see FINDINGS.md) |
+| `vba-next` | libretro VBA-Next @ `252f801` (2018-02-17), from https://github.com/libretro/vba-next | GPL 2 | yes, pinned to 252f801 … 7592321^; not built into carbon-pc yet |
+| `tinyxml2` | tinyxml2 11.0.0 | zlib | yes (version not pinned) |
+| `stb` | `stb_image.h` 2.30, `stb_image_write.h` 1.16 | MIT / public domain | `stb_image` yes (version not pinned) |
+| `glad` | glad 2.0.8 loader: `--api='gl:core=4.5' --extensions='GL_EXT_direct_state_access' c --loader` | see file headers | no, rebuild only |
+
+Once VBA-Next is linked in, a distributed `carbon.exe` falls under the GPL 2.
+
 ## What is not in this repository
 
 No game data, keys, firmware or BIOS are included. You need your own copy of the game.
@@ -21,12 +36,8 @@ No game data, keys, firmware or BIOS are included. You need your own copy of the
 | Local path | What it is | Where it comes from |
 |---|---|---|
 | `extracted/` | the game's ExeFS/RomFS and manual | your own dump, extracted with `tools/nspx` |
-| `extern/glad` | glad 2.0.8 loader | `glad --api='gl:core=4.5' --extensions='GL_EXT_direct_state_access' c --loader` |
-| `extern/tinyxml2` | tinyxml2 11.0.0 | https://github.com/leethomason/tinyxml2 |
-| `extern/stb` | `stb_image.h` 2.30, `stb_image_write.h` 1.16 | https://github.com/nothings/stb |
-| `extern/gb_snd_emu/Gb_Snd_Emu-0.1.4` | blargg's Gb_Snd_Emu 0.1.4 (unmodified) | http://www.slack.net/~ant/libs/ |
 | `extern/webview2/pkg` | NuGet `Microsoft.Web.WebView2` 1.0.4191.47, unpacked | https://www.nuget.org/packages/Microsoft.Web.WebView2 |
-| `extern/vba-next` | libretro VBA-Next (for the upcoming GBA core) | https://github.com/libretro/vba-next |
+| `extern/vba-next` | full VBA-Next clone, used to pin the version | https://github.com/libretro/vba-next |
 | `testroms/blargg` | blargg's GB test ROMs | https://github.com/retrio/gb-test-roms @ `c240dd7` |
 | `testroms/mooneye` | Mooneye Test Suite, build `mts-20260714-0944-31510e1` | https://gekkio.fi/files/mooneye-test-suite/ |
 | `Ryujinx-1.1.1403/` | Ryujinx source, patched by `tools/ryujinx_trace/apply_patch.py` | Ryujinx 1.1.1403 |
@@ -37,7 +48,7 @@ Many scripts in `tools/` have `C:\opencarbon` paths hard-coded, so clone to that
 
 ## Building and running (Windows)
 
-Requires Visual Studio 2026 (C++), CMake 3.25+, and the `extern/` folders above.
+Requires Visual Studio 2026 (C++), CMake 3.25+, and the WebView2 SDK unpacked to `extern/webview2/pkg`.
 
 ```
 cmake -S carbon-pc -B carbon-pc/build -G "Visual Studio 18 2026" -A x64

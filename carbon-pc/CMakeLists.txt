@@ -9,18 +9,20 @@ add_compile_options($<$<CONFIG:Release>:/Zi>)
 add_link_options($<$<CONFIG:Release>:/MAP>
                  $<$<CONFIG:Release>:/DEBUG> $<$<CONFIG:Release>:/OPT:REF> $<$<CONFIG:Release>:/OPT:ICF>)
 
+# Upstream sources, unmodified, are in third_party/. Only the WebView2 SDK stays outside the repo.
+set(THIRD_PARTY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
 set(EXTERN_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../extern)
-set(GB_SND_EMU_DIR ${EXTERN_DIR}/gb_snd_emu/Gb_Snd_Emu-0.1.4)
+set(GB_SND_EMU_DIR ${THIRD_PARTY_DIR}/Gb_Snd_Emu-0.1.4)
 
 # --- third-party (upstream sources, not decompiled) -----------------------------------------------
-add_library(glad STATIC ${EXTERN_DIR}/glad/src/gl.c)
-target_include_directories(glad PUBLIC ${EXTERN_DIR}/glad/include)
+add_library(glad STATIC ${THIRD_PARTY_DIR}/glad/src/gl.c)
+target_include_directories(glad PUBLIC ${THIRD_PARTY_DIR}/glad/include)
 
-add_library(tinyxml2 STATIC ${EXTERN_DIR}/tinyxml2/tinyxml2.cpp)
-target_include_directories(tinyxml2 PUBLIC ${EXTERN_DIR}/tinyxml2)
+add_library(tinyxml2 STATIC ${THIRD_PARTY_DIR}/tinyxml2/tinyxml2.cpp)
+target_include_directories(tinyxml2 PUBLIC ${THIRD_PARTY_DIR}/tinyxml2)
 
 add_library(stb STATIC src/third_party/stb_impl.cpp)
-target_include_directories(stb PUBLIC ${EXTERN_DIR}/stb)
+target_include_directories(stb PUBLIC ${THIRD_PARTY_DIR}/stb)
 target_compile_definitions(stb PRIVATE _CRT_SECURE_NO_WARNINGS)
 
 # Microsoft Edge WebView2 SDK (NuGet Microsoft.Web.WebView2 1.0.4191.47): stands in for the Switch offline web applet

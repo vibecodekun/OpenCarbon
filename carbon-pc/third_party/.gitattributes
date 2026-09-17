@@ -1,0 +1,2 @@
+# Upstream sources are kept byte-identical (no line-ending conversion), so they diff cleanly against upstream.
+* -text

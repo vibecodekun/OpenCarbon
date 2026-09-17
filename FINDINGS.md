@@ -498,6 +498,8 @@ The core's state lives in packed blocks laid out like the original globals: io @
 
 Bugs this found in the port during development: the decompiled `SLA`/`BIT` flags, a 4-byte field at 0x710024d048, and the BG colour-index cache @ 0x710024bba4 being `int[160]` rather than bytes.
 
+Upstream sources are vendored unmodified in `carbon-pc/third_party/`: Gb_Snd_Emu 0.1.4, VBA-Next @ `252f801` (not built yet), tinyxml2 11.0.0, stb and glad. Only the WebView2 SDK is read from `extern/webview2`.
+
 Commands:
 - Build: `cmake -S carbon-pc -B carbon-pc/build -G "Visual Studio 18 2026" -A x64`, then `cmake --build carbon-pc/build --config Release`.
 - Run: `carbon.exe --romfs extracted/base/romfs --save <dir> --html extracted/manual/<nca>/html-document`.
