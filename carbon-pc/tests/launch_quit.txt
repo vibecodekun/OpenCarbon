@@ -1,0 +1,4 @@
+# Launch SHANTAE, run a few seconds, close the window (exercises the exit path: hidden slot-4 state, shutdown).
+470 hold 4 A
++300 shot ingame
++10 quit

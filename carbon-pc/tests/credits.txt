@@ -1,0 +1,9 @@
+# Opens the credits (offline web applet) and returns to the menu when the page's 52 s refresh fires.
+# The applet blocks the frame loop, so the frames below count only frames drawn outside it.
+450 hold 3 DOWN
++10 hold 3 DOWN
++10 hold 3 DOWN
++30 log credits
++0  hold 3 A
++10 shot 30_menu_after_credits
++30 quit

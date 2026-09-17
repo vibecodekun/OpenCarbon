@@ -1,0 +1,77 @@
+0x71000e9980	App_ctor	F
+0x71000e99a0	App_Init	F	gamedef, renderer, input, artwork, GB/GBA system objects
+0x71000e9bb0	App_Run	F	state machine; state 4 = in-game, one emulated frame per iteration
+0x71000ea3e0	App_UpdateInput	F	menu navigation + game key mapping; held 0x70 combo opens pause menu
+0x710009fe10	Input_Init	F
+0x710009fe60	Input_Update	F	npad + sticks-as-dpad (+-32), [3]=held [0xb]=pressed [0xc]=released
+0x71000a1330	GameDef_ctor	F
+0x71000a1720	GameDef_Load	F	rom:/gamedef.xml via tinyxml2
+0x71000a2340	GameDef_GetTitleCount	F
+0x71000974b0	Renderer_ctor	F
+0x7100097f70	Renderer_Init	F	shaders + textures (GBFrameBuffer, GBAFrameBuffer, menu sprites)
+0x7100097930	Renderer_DrawMainMenu	F
+0x7100099450	Renderer_DrawExtrasMenu	F
+0x7100099c40	Renderer_DrawMenuBackground	F
+0x710009a560	Renderer_DrawPauseMenu	F
+0x710009a1d0	Renderer_BeginFrame	F
+0x710009a1f0	Renderer_EndFrame	F	callback + eglSwapBuffers
+0x710009b540	Graphics_InitEGL	F	plays wf_logo.mp4, EGL_OPENGL_API 4.5 core, swap interval 1
+0x710009b650	Graphics_Swap	F
+0x71000856c0	gb_key_down	F	0=R 1=L 2=U 3=D 4=A 5=B 6=Sel 7=Start (bit numbers of joypad_buttons)
+0x7100085730	gb_key_up	F
+0x7100080ea0	GbSystem_ctor	F
+0x7100082230	GbSystem_LoadState	F	clears audio ring, gb_load_state, Gb_Apu::reset
+0x7100082220	GbSystem_SaveState	F
+0x7100080ef0	GbSystem_LoadSlotPreviews	F
+0x7100082060	GbSystem_Shutdown	F
+0x710008d850	gb_save_state	F	0x1A2AD-byte snapshot + PNG thumbnail
+0x710008e210	gb_load_state	F
+0x710008c3c0	stbi_write_png_to_mem	F
+0x710008b3b0	stbi_zlib_compress	F
+0x710007ea80	GbaSystem_ctor	F
+0x710007ea90	GbaSystem_LoadRom	F	VBA-Next frontend-style init, CPUInit(NULL,false)
+0x710007e800	gba_audio_thread	F
+0x71000a05d0	Artwork_LoadTextures	F
+0x71000a0ca0	Artwork_Select	F
+0x71000a0e00	Artwork_Draw	F
+0x71000d0220	ResourceManager_LoadTexture	F
+0x71000d0330	ResourceManager_GetTexture	F
+0x71000e9090	Shader_CheckCompileErrors	F	LearnOpenGL-style Shader class
+0x71000e9680	SpriteRenderer_DrawSprite	F	LearnOpenGL-style SpriteRenderer (model/spriteColor)
+0x71000ccb80	TextRenderer_Init	F
+0x71000cd180	Font_Load	F	rom:/assets/fonts/%s.bin + .tga
+0x710009bf50	MoviePlayer_Play	F	NintendoSDK movie sample player; no input; polls end of both streams every 100 ms
+0x710009d640	MoviePlayer_Destroy	F	stops threads, finalizes renderers (vi layer destroyed)
+0x7100102c80	MovieAudioRenderer_Submit	F	AudioOut buffer from decoded PCM; re-anchors the media clock
+0x71001042a0	MovieAudioOut_Open	F	nn::audio::AudioOut + resampler
+0x7100104c30	MediaClock_UpdateAnchor	F	(mediaUs, realUs, maxMediaUs)
+0x7100104cf0	MediaClock_GetRealTimeFor	F
+0x71001056b0	MovieVideoRenderer_RenderFrame	F	reads width/height/nv12-* from the decoder format, re-creates textures on a size change
+0x7100105a10	MovieVideoRenderer_CheckFrameTime	F	first frame anchors the clock; >= 40001 us late -> dropped
+0x7100106b50	MovieNvnRenderer_Init	F	glslc shaders, 1280x720 NVN window
+0x7100107e10	MovieNvnRenderer_DrawFrame	F	NV12 copy to R8/RG8 textures, YUV matrix by nv12-colorspace (0/4 BT.601 limited, 1 BT.601 full, 2 BT.709 limited, 3 BT.709 full)
+0x7100108270	MovieNvnRenderer_Resize	F	textures + aspect-scaled quad; records clear (0.5 grey) + strip draw
+0x710009f530	MenuSound_LoadAll	F
+0x710009f750	MenuAudio_Init	F	AudioRenderer "MainAudioOut"
+0x7100003000	CPUIsGBABios	F	VBA-Next
+0x7100002a40	CPUInit	F	VBA-Next
+0x71000030d0	CPUReset	F	VBA-Next
+0x7100000a90	CPULoadRom	F	VBA-Next
+0x710007ede0	utilLoad_carbon	F	rewritten by LRG: plain fopen, copies title @0xA0
+0x7100004190	CPULoop	F	VBA-Next, armExecute/thumbExecute inlined
+0x710007f0a0	flashSetSize	F
+0x710007fab0	rtcEnable	F
+0x7100000be0	doMirroring	F
+0x71001d4158	bus	D	VBA-Next bus_t {reg[45], busPrefetch, busPrefetchEnable, busPrefetchCount, armNextPC}
+0x71001d4130	clockTicks	D
+0x71001b1320	saveGameStruct	D
+0x71000e8d10	ResourceManager_static_init	F	Shaders + Textures std::map
+0x71000e8d70	Shader_Use	F
+0x71000e8da0	Shader_Compile	F	vertex, fragment, optional geometry
+0x71000e9320	Shader_SetFloat	F
+0x71000e93a0	Shader_SetInteger	F
+0x71000e9420	Shader_SetVector4f	F
+0x71000e94b0	Shader_SetMatrix4	F
+0x71000e9540	SpriteRenderer_initRenderData	F	6-vertex quad (LearnOpenGL)
+0x71000ebb70	Texture2D_Bind	F
+0x71000eba50	Texture2D_Generate	F

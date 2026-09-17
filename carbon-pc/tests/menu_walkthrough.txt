@@ -1,0 +1,87 @@
+# Walks every reachable menu path with the stub core. Run:
+#   carbon --script tests/menu_walkthrough.txt --shots <dir> --hidden --mute --audio-dump <dir> --gl-debug ...
+# Frame 0 is the first splash frame; the splash lasts 6 s (~360 frames), the menu intro ~70 frames.
+
+100 shot 00_splash
+450 log menu
++0  shot 01_menu_title0
++5  hold 3 DOWN
++15 shot 02_menu_title1
++5  hold 3 DOWN
++15 shot 03_menu_extras
++5  hold 3 DOWN
++15 shot 04_menu_credits
++5  log credits
++0  hold 3 A
++20 shot 05_menu_after_credits
+
+# artwork gallery
++5  hold 3 UP
++15 log artwork
++0  hold 3 A
++30 shot 10_artwork_p01
++5  hold 3 R
++30 shot 11_artwork_p02
++5  stick 40 0 0 32767 0
++45 shot 12_artwork_zoomed
++5  stick 30 32767 0 0 0
++35 shot 13_artwork_panned
++5  hold 30 A
++25 shot 14_artwork_ui_hidden
++10 hold 3 L
++20 shot 15_artwork_p01_again
++5  hold 3 B
++10 shot 16_menu_from_artwork
++60 shot 17_menu_from_artwork_settled
+
+# launch SHANTAE (stub core)
++5  hold 3 UP
++10 hold 3 UP
++30 shot 20_menu_before_launch
++5  log launch
++0  hold 3 A
++15 shot 21_launch_transition
++60 shot 22_ingame_first_second
++60 shot 23_ingame_sharp
+
+# pause menu
++5  log pause
++0  hold 3 ZL+ZR
++30 shot 30_pause_resume
++5  hold 3 DOWN
++15 shot 31_pause_load
++5  hold 3 RIGHT
++20 shot 32_pause_load_slot0
++5  hold 3 DOWN
++15 shot 33_pause_load_slot1
++5  hold 3 LEFT
++10 hold 3 DOWN
++15 shot 34_pause_save
++5  hold 3 A
++15 hold 3 A
++15 shot 35_confirm_save
++5  hold 3 B
++15 hold 3 LEFT
++10 hold 3 DOWN
++10 hold 3 DOWN
++15 shot 36_pause_filter_sharp
++5  hold 3 A
++15 shot 37_pause_filter_lcd
++5  hold 3 A
++15 shot 38_pause_filter_native
++5  hold 3 A
++5  hold 3 A
++15 log resume
++0  hold 3 B
++40 shot 39_ingame_lcd
+
+# exit to the main menu
++5  hold 3 ZL+ZR
++30 hold 3 UP
++15 shot 40_pause_exit
++5  log exit
++0  hold 3 A
++30 shot 41_menu_after_exit
++90 shot 42_menu_after_exit_settled
++30 log quit
++0  quit

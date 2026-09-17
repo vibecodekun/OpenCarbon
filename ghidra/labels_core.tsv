@@ -1,0 +1,75 @@
+0x710008d4c0	gb_write8	F	addr>>12 dispatch; cart via mapper vtable[0]
+0x710008d630	gb_read8	F	cart via mapper vtable[1]
+0x710008d7f0	gb_read16	F
+0x710008d820	gb_write16	F
+0x7100083890	GbApu_write_register	F	blargg Gb_Snd_Emu style
+0x7100084160	GbApu_read_register	F
+0x7100083680	GbApu_run_until	F
+0x71000873b0	lcd_step	F	STAT mode machine, HBlank render + HDMA
+0x71000878c0	video_io_write	F	FF40-FF6F
+0x7100087700	video_io_read	F
+0x7100087260	vram_write	F
+0x71000871f0	vram_read	F
+0x7100094a90	wram_write	F	C000-FDFF + FF70
+0x7100094b00	wram_read	F
+0x71000949b0	timer_write	F	FF04-FF07
+0x7100094a20	timer_read	F
+0x71001b2018	gb_opcode_table	D
+0x710024d030	gb_cpu	D	F,A,C,B,E,D,L,H,SP,PC
+0x710024d040	gb_cpu_ticks	D	4 ticks per M-cycle
+0x710024d044	gb_debug_log	D
+0x710024d060	gb_IF	D
+0x710024d061	gb_IE	D
+0x710024bed0	lcd_tick_accum	D
+0x710024bed4	lcd_mode	D
+0x71001b1bd8	joypad_buttons	D
+0x71001b1bda	video_regs	D	+0 LY +1 LYC +3 LCDC +0xc STAT
+0x710024bef0	gb_oam	D
+0x710024bf90	gb_hram	D
+0x710024cff8	joyp_select	D
+0x712abac020	gb_mapper	D	pointer to cartridge mapper object
+0x710024c010	gb_apu	D
+0x7100222118	gb_apu_time	D
+0x710008e7f0	gb_cpu_step	F	fetch at PC, halted -> 4 ticks, else dispatch via gb_opcode_table
+0x71000853e0	gb_service_interrupts	F	priority order VBL,JOYPAD,STAT,SERIAL,TIMER (real: VBL,STAT,TIMER,SERIAL,JOYPAD)
+0x71000948e0	gb_timer_step	F	DIV every 256 ticks, TIMA periods {1024,16,64,256}
+0x71000820b0	gb_run_frame	F	per-instruction lock-step: cpu, irq, lcd, apu end_frame, blip read, timer
+0x7100081f60	gb_init	F	forces CGB, Blip 48000Hz/250ms, clock 4194304, audio thread core1
+0x7100083830	GbApu_end_frame	F
+0x7100085160	StereoBuffer_end_frame	F
+0x71000851a0	StereoBuffer_read_samples	F
+0x7100085010	StereoBuffer_set_sample_rate	F
+0x7100085080	StereoBuffer_clock_rate	F
+0x7100083430	GbApu_ctor	F
+0x71000835e0	GbApu_output	F
+0x71000880e0	cart_load	F	ext .gba->GBA(2) .nes/.NES->NES placeholder(3), else GB/GBC by 0x143; mapper by 0x147
+0x7100087f70	path_is_gba	F
+0x7100087e00	path_is_nes	F
+0x7100085800	gb_render_scanline	F
+0x71000858d0	cgb_render_bg	F
+0x7100085c90	cgb_render_window	F
+0x71000860e0	cgb_render_sprites	F
+0x7100085b30	dmg_render_bg	F
+0x7100085f70	dmg_render_window	F
+0x7100086c00	dmg_render_sprites	F
+0x71000e9bb0	app_main_loop	F	state machine; state 4 = in-game, one emulated frame per iteration
+0x71000ea3e0	app_update_input_and_menus	F
+0x7100097520	gb_present_frame	F	uploads GBFrameBuffer
+0x71000977f0	gba_present_frame	F	uploads GBAFrameBuffer
+0x710007ec80	gba_run_frame	F
+0x7100080b40	audio_thread_main	F
+0x7100223303	gb_framebuffer_rgba	D	160x144 RGBA8888
+0x7100247ba3	gb_is_cgb	D
+0x7100247ba4	gb_vram_etc	D
+0x710024bed5	gb_frame_done	D
+0x710024d03c	gb_cpu_halted	D
+0x710024d04d	gb_double_speed	D
+0x7100223300	gb_ime_request	D
+0x7100223301	gb_ime	D
+0x7100223302	gb_ei_delay	D
+0x71001a72d0	gba_arm_thumb_table	D	4096 ARM + 1024 THUMB handlers
+0x7100222000	gb_stereo_buffer	D
+0x7100223138	audio_ring_buffer	D	malloc(0x8000) int16 stereo
+0x7100223124	audio_ring_fill	D
+0x71000834a0	GbApu_apply_stereo	F	LRG addition, called after a state load: oscillator outputs from NR51 (no NR52 mask); clears the old Blip_Buffer if a sounding osc moves
+0x7100082360	BlipBuffer_clear	F	Blip_Buffer::clear(bool entire_buffer)

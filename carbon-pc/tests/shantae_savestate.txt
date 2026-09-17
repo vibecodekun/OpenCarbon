@@ -1,0 +1,21 @@
+# Save a state on the title screen, start the game, then load the state back through the pause menu.
+470 hold 4 A
+1800 shot 20_title_before_save
++5  hold 4 ZL+ZR
++40 hold 3 DOWN
++10 hold 3 DOWN
++10 hold 3 A
++15 hold 3 A
++15 shot 21_confirm_save
++5  hold 3 A
++30 shot 22_slots_after_save
++5  hold 3 B
++60 hold 6 PLUS
++240 shot 23_after_start
++5  hold 4 ZL+ZR
++40 hold 3 DOWN
++10 hold 3 A
++20 shot 24_load_slots
++5  hold 3 A
++60 shot 25_after_load
++10 quit

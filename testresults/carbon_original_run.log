@@ -1,0 +1,171 @@
+169 ROMs, 12 workers
+[  1/169] FAIL    blargg/cgb_sound/rom_singles/01-registers.gb  (30 fr, 2.0s) 01-registers | NR10-NR51 and wave R | AM write/read | Failed #2
+[  2/169] FAIL    blargg/cgb_sound/rom_singles/06-overflow on trigger.gb  (30 fr, 2.1s) 06-overflow on trigg | er | 07FF 07FF 07FF 07FF | 07FF 07FF 07FF | 4236F3B5 | Failed
+[  3/169] FAIL    blargg/cgb_sound/rom_singles/11-regs after power.gb  (30 fr, 2.1s) 11-regs after power | Powering off should | clear NR12 | Failed #2
+[  4/169] FAIL    blargg/cgb_sound/rom_singles/03-trigger.gb  (30 fr, 2.2s) 03-trigger | 0 | Enabling in first ha | lf of length period | should clock length | Failed
+[  5/169] FAIL    blargg/cgb_sound/rom_singles/09-wave read while on.gb  (60 fr, 3.4s) 09-wave read while o | n | 00 00 00 00 00 00 00 | 00 00 00 00 00 00 00 | 00 00 00 00 00 00
+[  6/169] FAIL    blargg/cgb_sound/rom_singles/02-len ctr.gb  (60 fr, 3.8s) 02-len ctr | 0 | Trigger shouldn't af | fect length | Failed #5
+[  7/169] FAIL    blargg/cgb_sound/rom_singles/12-wave.gb  (30 fr, 2.2s) 12-wave | Timer period or phas | e resetting is wrong | Failed #2
+[  8/169] PASS    blargg/cpu_instrs/individual/02-interrupts.gb  (30 fr, 2.0s) 02-interrupts | Passed | 02-interrupts | Passed
+[  9/169] FAIL    blargg/cgb_sound/rom_singles/08-len ctr during power.gb  (90 fr, 5.0s) 08-len ctr during po | wer | 33 44 11 22 32F0CFBB | Failed
+[ 10/169] PASS    blargg/cpu_instrs/individual/07-jr,jp,call,ret,rst.gb  (30 fr, 2.9s) 07-jr,jp,call,ret,rst | Passed | 07-jr,jp,call,ret,rs | t
+[ 11/169] PASS    blargg/cpu_instrs/individual/06-ld r,r.gb  (49 fr, 3.9s) 06-ld r,r | Passed | 06-ld r,r | Passed
+[ 12/169] PASS    blargg/cpu_instrs/individual/08-misc instrs.gb  (30 fr, 2.7s) 08-misc instrs | Passed | 08-misc instrs | Passed
+[ 13/169] PASS    blargg/cpu_instrs/individual/01-special.gb  (150 fr, 10.9s) 01-special | Passed | 01-special | Passed
+[ 14/169] PASS    blargg/cpu_instrs/individual/03-op sp,hl.gb  (90 fr, 10.3s) 03-op sp,hl | Passed | 03-op sp,hl | Passed
+[ 15/169] PASS    blargg/cpu_instrs/individual/04-op r,imm.gb  (90 fr, 11.2s) 04-op r,imm | Passed | 04-op r,imm | Passed
+[ 16/169] FAIL    blargg/dmg_sound/rom_singles/01-registers.gb  (30 fr, 2.4s) 01-registers | NR10-NR51 and wave R | AM write/read | Failed #2
+[ 17/169] PASS    blargg/cpu_instrs/individual/05-op rp.gb  (120 fr, 15.5s) 05-op rp | Passed | 05-op rp | Passed
+[ 18/169] FAIL    blargg/dmg_sound/rom_singles/02-len ctr.gb  (60 fr, 4.0s) 02-len ctr | 0 | Trigger shouldn't af | fect length | Failed #5
+[ 19/169] FAIL    blargg/dmg_sound/rom_singles/03-trigger.gb  (30 fr, 2.5s) 03-trigger | 0 | Enabling in first ha | lf of length period | should clock length | Failed
+[ 20/169] PASS    blargg/cpu_instrs/individual/09-op r,r.gb  (300 fr, 38.1s) 09-op r,r | Passed | 09-op r,r | Passed
+[ 21/169] FAIL    blargg/dmg_sound/rom_singles/06-overflow on trigger.gb  (30 fr, 2.0s) 06-overflow on trigg | er | 07FF 07FF 07FF 07FF | 07FF 07FF 07FF | 4236F3B5 | Failed
+[ 22/169] PASS    blargg/cpu_instrs/individual/10-bit ops.gb  (450 fr, 56.9s) 10-bit ops | Passed | 10-bit ops | Passed
+[ 23/169] PASS    blargg/dmg_sound/rom_singles/08-len ctr during power.gb  (90 fr, 4.8s) 08-len ctr during po | wer | 33 44 11 22 | Passed
+[ 24/169] FAIL    blargg/dmg_sound/rom_singles/09-wave read while on.gb  (60 fr, 3.3s) 09-wave read while o | n | 00 00 00 00 00 00 00 | 00 00 00 00 00 00 00 | 00 00 00 00 00 00
+[ 25/169] PASS    blargg/cpu_instrs/individual/11-op a,(hl).gb  (540 fr, 65.8s) 11-op a,(hl) | Passed | 11-op a,(hl) | Passed
+[ 26/169] FAIL    blargg/dmg_sound/rom_singles/11-regs after power.gb  (30 fr, 2.0s) 11-regs after power | Powering off should | clear NR12 | Failed #2
+[ 27/169] TIMEOUT blargg/cgb_sound/rom_singles/10-wave trigger while on.gb  (2400 fr, 106.0s) 00 11 22 33 44 55 66 | 77 88 99 AA BB CC DD | EE FF | 00 11 22 33 44 55 66 | 77 88 99 AA B
+[ 28/169] FAIL    blargg/halt_bug.gb  (120 fr, 7.0s) halt bug | IE IF IF DE | 01 10 F1 0C04 | 01 00 E1 0C04 | 01 01 E1 0C04 | 11 00 E1 0C04 | 1
+[ 29/169] FAIL    blargg/instr_timing/instr_timing.gb  (50 fr, 3.1s) instr_timing | 40:0-1 | Failed | instr_timing | 40:0-1 | Failed
+[ 30/169] PASS    blargg/interrupt_time/interrupt_time.gb  (30 fr, 2.6s) interrupt time | 00 00 00 | 00 08 0D | 01 00 00 | 01 08 0D | Passed
+[ 31/169] TIMEOUT blargg/cgb_sound/rom_singles/07-len sweep period sync.gb  (2400 fr, 124.3s) 07-len sweep period | sync
+[ 32/169] TIMEOUT blargg/cgb_sound/rom_singles/05-sweep details.gb  (2400 fr, 124.7s) 05-sweep details
+[ 33/169] TIMEOUT blargg/cgb_sound/rom_singles/04-sweep.gb  (2400 fr, 124.7s) 04-sweep
+[ 34/169] FAIL    blargg/mem_timing-2/mem_timing.gb  (120 fr, 7.6s) mem_timing | 01:    02:    03: | Run failed tests | individually for | more details.
+[ 35/169] FAIL    blargg/mem_timing-2/rom_singles/01-read_timing.gb  (30 fr, 2.1s) 01-read_timing | F0:2-3 FA:2-4 CB 46: | 2-3 CB 4E:2-3 CB 56: | 2-3 CB 5E:2-3 CB 66: | 2-3 
+[ 36/169] FAIL    blargg/mem_timing-2/rom_singles/02-write_timing.gb  (30 fr, 1.9s) 02-write_timing | 36:2-3 E0:2-3 EA:2-4 | Failed
+[ 37/169] FAIL    blargg/mem_timing/individual/02-write_timing.gb  (30 fr, 1.9s) 02-write_timing | 36:2-3 E0:2-3 EA:2-4 | Failed | 02-write_timing | 36:2-3 E0:2-3 EA:2-4 |
+[ 38/169] FAIL    blargg/mem_timing/individual/01-read_timing.gb  (60 fr, 3.4s) 01-read_timing | F0:2-3 FA:2-4 CB 46:2-3 CB 4E:2-3 CB 56:2-3 CB 5E:2-3 CB 66:2-3 CB 6E:2-3
+[ 39/169] FAIL    blargg/mem_timing/individual/03-modify_timing.gb  (120 fr, 6.8s) 03-modify_timing | 35:0/0-2/3 | 34:0/0-2/3 | CB 06:0/0-3/4 | CB 0E:0/0-3/4 | CB 16:0/0-3/4
+[ 40/169] FAIL    blargg/mem_timing/mem_timing.gb  (120 fr, 6.9s) mem_timing | 01:01  02:01  03:01 | Failed 3 tests. | mem_timing | 01:    02:    03: | Fail
+[ 41/169] FAIL    blargg/oam_bug/rom_singles/1-lcd_sync.gb  (30 fr, 2.2s) 1-lcd_sync | Turning LCD on start | s too late in scanli | ne | Failed #2
+[ 42/169] FAIL    blargg/oam_bug/rom_singles/2-causes.gb  (30 fr, 2.6s) 2-causes | LD DE,$FE00 : INC DE | Failed #2
+[ 43/169] FAIL    blargg/oam_bug/rom_singles/4-scanline_timing.gb  (30 fr, 2.8s) 4-scanline_timing | INC DE at first corr | uption | Failed #3
+[ 44/169] PASS    blargg/oam_bug/rom_singles/3-non_causes.gb  (60 fr, 5.5s) 3-non_causes | Passed
+[ 45/169] FAIL    blargg/oam_bug/rom_singles/5-timing_bug.gb  (30 fr, 2.6s) 5-timing_bug | Should corrupt at be | ginning of first sca | nline | Failed #2
+[ 46/169] TIMEOUT blargg/dmg_sound/rom_singles/05-sweep details.gb  (2400 fr, 122.0s) 05-sweep details
+[ 47/169] PASS    blargg/oam_bug/rom_singles/6-timing_no_bug.gb  (60 fr, 5.7s) Passed | -- -- -- -- -- -- -- | -- -- -- | 10 -- -- -- -- -- -- | -- -- -- -- -- -- -- | -
+[ 48/169] TIMEOUT blargg/dmg_sound/rom_singles/04-sweep.gb  (2400 fr, 126.5s) 04-sweep
+[ 49/169] FAIL    blargg/oam_bug/rom_singles/8-instr_effect.gb  (60 fr, 3.7s) 8-instr_effect | 00000000 | INC/DEC rp pattern i | s wrong | Failed #2
+[ 50/169] PASS    mooneye/acceptance/bits/mem_oam.gb  (2 fr, 0.6s) B=03 C=05 D=08 E=0d H=15 L=22
+[ 51/169] PASS    mooneye/acceptance/bits/reg_f.gb  (2 fr, 0.6s) B=03 C=05 D=08 E=0d H=15 L=22
+[ 52/169] FAIL    mooneye/acceptance/bits/unused_hwio-GS.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 53/169] FAIL    mooneye/acceptance/boot_div-S.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 54/169] FAIL    mooneye/acceptance/boot_div-dmg0.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 55/169] FAIL    mooneye/acceptance/boot_div-dmgABCmgb.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 56/169] FAIL    mooneye/acceptance/boot_hwio-S.gb  (2 fr, 0.5s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 57/169] FAIL    mooneye/acceptance/boot_div2-S.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 58/169] FAIL    mooneye/acceptance/boot_hwio-dmg0.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 59/169] FAIL    mooneye/acceptance/boot_hwio-dmgABCmgb.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 60/169] FAIL    mooneye/acceptance/boot_regs-dmg0.gb  (2 fr, 0.5s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 61/169] FAIL    mooneye/acceptance/boot_regs-dmgABC.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 62/169] FAIL    mooneye/acceptance/boot_regs-mgb.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 63/169] FAIL    mooneye/acceptance/boot_regs-sgb.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 64/169] FAIL    mooneye/acceptance/boot_regs-sgb2.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 65/169] FAIL    blargg/oam_bug/rom_singles/7-timing_effect.gb  (150 fr, 19.6s) 7-timing_effect | 00000000 | Failed
+[ 66/169] FAIL    blargg/oam_bug/oam_bug.gb  (270 fr, 34.2s) oam_bug | 01:    02:    03:ok | 04:    05:    06:ok | 07:    08: | Run failed tests | indi
+[ 67/169] HANG    mooneye/acceptance/add_sp_e_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100085414) PC=0150
+[ 68/169] TIMEOUT blargg/dmg_sound/rom_singles/07-len sweep period sync.gb  (2400 fr, 121.8s) 07-len sweep period | sync
+[ 69/169] FAIL    mooneye/acceptance/div_timing.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 70/169] FAIL    mooneye/acceptance/ei_sequence.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 71/169] PASS    mooneye/acceptance/ei_timing.gb  (2 fr, 0.6s) B=03 C=05 D=08 E=0d H=15 L=22
+[ 72/169] HANG    mooneye/acceptance/call_cc_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008a430) PC=0153
+[ 73/169] HANG    mooneye/acceptance/call_cc_timing2.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100083690) PC=0155
+[ 74/169] PASS    mooneye/acceptance/halt_ime1_timing.gb  (2 fr, 0.7s) B=03 C=05 D=08 E=0d H=15 L=22
+[ 75/169] TIMEOUT blargg/dmg_sound/rom_singles/10-wave trigger while on.gb  (2400 fr, 102.9s) 00 11 22 33 44 55 66 | 77 88 99 AA BB CC DD | EE FF | 00 11 22 33 44 55 66 | 77 88 99 AA B
+[ 76/169] FAIL    mooneye/acceptance/if_ie_registers.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 77/169] PASS    mooneye/acceptance/instr/daa.gb  (2 fr, 1.3s) B=03 C=05 D=08 E=0d H=15 L=22
+[ 78/169] FAIL    mooneye/acceptance/interrupts/ie_push.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 79/169] FAIL    mooneye/acceptance/intr_timing.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 80/169] HANG    mooneye/acceptance/call_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x71000948f0) PC=0151
+[ 81/169] HANG    mooneye/acceptance/call_timing2.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100085188) PC=0151
+[ 82/169] TIMEOUT blargg/dmg_sound/rom_singles/12-wave write while on.gb  (2400 fr, 103.7s) F7 11 22 33 44 55 66 | 77 88 99 AA BB CC DD | EE FF | F7 11 22 33 44 55 66 | 77 88 99 AA B
+[ 83/169] PASS    mooneye/acceptance/oam_dma/basic.gb  (2 fr, 0.6s) B=03 C=05 D=08 E=0d H=15 L=22
+[ 84/169] FAIL    mooneye/acceptance/oam_dma/reg_read.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 85/169] HANG    mooneye/acceptance/di_timing-GS.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100094910) PC=015a
+[ 86/169] FAIL    mooneye/acceptance/oam_dma/sources-GS.gb  (2 fr, 2.3s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 87/169] FAIL    mooneye/acceptance/oam_dma_start.gb  (4 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 88/169] HANG    mooneye/acceptance/halt_ime0_ei.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100083834) PC=0160
+[ 89/169] HANG    mooneye/acceptance/halt_ime0_nointr_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008d758) PC=0152
+[ 90/169] FAIL    mooneye/acceptance/pop_timing.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 91/169] HANG    mooneye/acceptance/halt_ime1_timing2-GS.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100082118) PC=0155
+[ 92/169] HANG    mooneye/acceptance/jp_cc_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x71000873f8) PC=0151
+[ 93/169] HANG    mooneye/acceptance/jp_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008517c) PC=0153
+[ 94/169] HANG    mooneye/acceptance/ld_hl_sp_e_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x71000948f0) PC=0151
+[ 95/169] FAIL    mooneye/acceptance/ppu/intr_2_mode0_timing_sprites.gb  (5 fr, 1.2s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 96/169] PASS    blargg/cpu_instrs/cpu_instrs.gb  (1797 fr, 202.4s) cpu_instrs | 01:ok  02:ok  03:ok  04:ok  05:ok  06:ok  07:ok  08:ok  09:ok  10:ok  11:ok |
+[ 97/169] FAIL    mooneye/acceptance/ppu/lcdon_timing-GS.gb  (5 fr, 1.1s) B=42 C=42 D=42 E=42 H=42 L=42
+[ 98/169] HANG    mooneye/acceptance/oam_dma_restart.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x71000873b0) PC=0151
+[ 99/169] FAIL    mooneye/acceptance/ppu/lcdon_write_timing-GS.gb  (21 fr, 2.3s) B=42 C=42 D=42 E=42 H=42 L=42
+[100/169] HANG    mooneye/acceptance/oam_dma_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x71000873b4) PC=0151
+[101/169] HANG    mooneye/acceptance/ppu/hblank_ly_scx_timing-GS.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008540c) PC=0155
+[102/169] HANG    mooneye/acceptance/ppu/intr_1_2_timing-GS.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008f430) PC=0158
+[103/169] PASS    mooneye/acceptance/rapid_di_ei.gb  (2 fr, 0.7s) B=03 C=05 D=08 E=0d H=15 L=22
+[104/169] HANG    mooneye/acceptance/ppu/intr_2_0_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008e7f0) PC=0155
+[105/169] TIMEOUT blargg/cgb_sound/cgb_sound.gb  (4200 fr, 213.9s) cgb_sound | 01:    02:    03: | 04
+[106/169] PASS    mooneye/acceptance/reti_intr_timing.gb  (2 fr, 0.7s) B=03 C=05 D=08 E=0d H=15 L=22
+[107/169] HANG    mooneye/acceptance/ppu/intr_2_mode0_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100083688) PC=0155
+[108/169] HANG    mooneye/acceptance/ppu/intr_2_mode3_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100084510) PC=0155
+[109/169] HANG    mooneye/acceptance/ppu/intr_2_oam_ok_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100091c9c) PC=0157
+[110/169] FAIL    mooneye/acceptance/serial/boot_sclk_align-dmgABCmgb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[111/169] FAIL    mooneye/acceptance/timer/div_write.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[112/169] FAIL    mooneye/acceptance/timer/rapid_toggle.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[113/169] FAIL    mooneye/acceptance/timer/tim00.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[114/169] PASS    mooneye/acceptance/timer/tim00_div_trigger.gb  (2 fr, 0.7s) B=03 C=05 D=08 E=0d H=15 L=22
+[115/169] PASS    mooneye/acceptance/timer/tim01.gb  (2 fr, 0.8s) B=03 C=05 D=08 E=0d H=15 L=22
+[116/169] HANG    mooneye/acceptance/ppu/stat_irq_blocking.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100087404) PC=015a
+[117/169] FAIL    mooneye/acceptance/timer/tim01_div_trigger.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[118/169] FAIL    mooneye/acceptance/timer/tim10.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[119/169] FAIL    mooneye/acceptance/timer/tim10_div_trigger.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[120/169] HANG    mooneye/acceptance/ppu/stat_lyc_onoff.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008e84c) PC=0163
+[121/169] FAIL    mooneye/acceptance/timer/tim11.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[122/169] PASS    mooneye/acceptance/timer/tim11_div_trigger.gb  (2 fr, 0.7s) B=03 C=05 D=08 E=0d H=15 L=22
+[123/169] FAIL    mooneye/acceptance/timer/tima_reload.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[124/169] FAIL    mooneye/acceptance/timer/tima_write_reloading.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[125/169] FAIL    mooneye/acceptance/timer/tma_write_reloading.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[126/169] TIMEOUT blargg/mem_timing-2/rom_singles/03-modify_timing.gb  (2400 fr, 104.4s) 03-modify_timing | 35:0/0-2/3 | 34:0/0-2/3 | CB 06:0/0-3/4 | CB 0E:0/0-3/4 | CB 16:0/0-3/4
+[127/169] HANG    mooneye/acceptance/ppu/vblank_stat_intr-GS.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100083690) PC=0168
+[128/169] FAIL    mooneye/emulator-only/mbc1/bits_ramg.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[129/169] FAIL    mooneye/emulator-only/mbc1/multicart_rom_8Mb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[130/169] TIMEOUT blargg/dmg_sound/dmg_sound.gb  (4200 fr, 216.6s) dmg_sound | 01:    02:    03: | 04
+[131/169] FAIL    mooneye/emulator-only/mbc1/rom_16Mb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[132/169] PASS    mooneye/emulator-only/mbc1/rom_1Mb.gb  (2 fr, 0.9s) B=03 C=05 D=08 E=0d H=15 L=22
+[133/169] FAIL    mooneye/emulator-only/mbc1/ram_256kb.gb  (2 fr, 2.2s) B=42 C=42 D=42 E=42 H=42 L=42
+[134/169] PASS    mooneye/emulator-only/mbc1/rom_2Mb.gb  (2 fr, 0.9s) B=03 C=05 D=08 E=0d H=15 L=22
+[135/169] FAIL    mooneye/emulator-only/mbc1/ram_64kb.gb  (2 fr, 2.2s) B=42 C=42 D=42 E=42 H=42 L=42
+[136/169] CRASH   mooneye/emulator-only/mbc2/bits_ramg.gb  (0 fr, 0.0s) cart type 0x06: Carbon has no mapper for this (cart_load would return NULL and crash)
+[137/169] CRASH   mooneye/emulator-only/mbc2/bits_romb.gb  (0 fr, 0.0s) cart type 0x06: Carbon has no mapper for this (cart_load would return NULL and crash)
+[138/169] CRASH   mooneye/emulator-only/mbc2/bits_unused.gb  (0 fr, 0.0s) cart type 0x06: Carbon has no mapper for this (cart_load would return NULL and crash)
+[139/169] CRASH   mooneye/emulator-only/mbc2/ram.gb  (0 fr, 0.0s) cart type 0x06: Carbon has no mapper for this (cart_load would return NULL and crash)
+[140/169] PASS    mooneye/emulator-only/mbc1/rom_4Mb.gb  (2 fr, 0.9s) B=03 C=05 D=08 E=0d H=15 L=22
+[141/169] CRASH   mooneye/emulator-only/mbc2/rom_1Mb.gb  (0 fr, 0.0s) cart type 0x05: Carbon has no mapper for this (cart_load would return NULL and crash)
+[142/169] PASS    mooneye/emulator-only/mbc1/rom_512kb.gb  (2 fr, 0.9s) B=03 C=05 D=08 E=0d H=15 L=22
+[143/169] CRASH   mooneye/emulator-only/mbc2/rom_2Mb.gb  (0 fr, 0.0s) cart type 0x05: Carbon has no mapper for this (cart_load would return NULL and crash)
+[144/169] CRASH   mooneye/emulator-only/mbc2/rom_512kb.gb  (0 fr, 0.0s) cart type 0x05: Carbon has no mapper for this (cart_load would return NULL and crash)
+[145/169] FAIL    mooneye/emulator-only/mbc1/rom_8Mb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[146/169] HANG    mooneye/acceptance/push_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x71000873b8) PC=0155
+[147/169] FAIL    mooneye/emulator-only/mbc5/rom_1Mb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[148/169] FAIL    mooneye/emulator-only/mbc5/rom_16Mb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[149/169] FAIL    mooneye/emulator-only/mbc5/rom_2Mb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[150/169] PASS    mooneye/emulator-only/mbc5/rom_32Mb.gb  (2 fr, 0.9s) B=03 C=05 D=08 E=0d H=15 L=22
+[151/169] FAIL    mooneye/emulator-only/mbc5/rom_4Mb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[152/169] HANG    mooneye/acceptance/ret_cc_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x7100083680) PC=015e
+[153/169] FAIL    mooneye/emulator-only/mbc5/rom_512kb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[154/169] FAIL    mooneye/emulator-only/mbc5/rom_8Mb.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[155/169] HANG    mooneye/acceptance/ret_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008518c) PC=015c
+[156/169] PASS    mooneye/emulator-only/mbc5/rom_64Mb.gb  (2 fr, 0.9s) B=03 C=05 D=08 E=0d H=15 L=22
+[157/169] FAIL    mooneye/misc/bits/unused_hwio-C.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[158/169] FAIL    mooneye/misc/boot_div-A.gb  (2 fr, 0.8s) B=42 C=42 D=42 E=42 H=42 L=42
+[159/169] FAIL    mooneye/misc/boot_div-cgb0.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[160/169] FAIL    mooneye/misc/boot_hwio-C.gb  (2 fr, 0.6s) B=42 C=42 D=42 E=42 H=42 L=42
+[161/169] FAIL    mooneye/misc/boot_div-cgbABCDE.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[162/169] FAIL    mooneye/misc/boot_regs-A.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[163/169] FAIL    mooneye/misc/boot_regs-cgb.gb  (2 fr, 0.7s) B=42 C=42 D=42 E=42 H=42 L=42
+[164/169] HANG    mooneye/acceptance/reti_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x71000873f8) PC=015e
+[165/169] PASS    mooneye/emulator-only/mbc1/bits_bank1.gb  (2 fr, 8.0s) B=03 C=05 D=08 E=0d H=15 L=22
+[166/169] PASS    mooneye/emulator-only/mbc1/bits_bank2.gb  (2 fr, 7.9s) B=03 C=05 D=08 E=0d H=15 L=22
+[167/169] PASS    mooneye/emulator-only/mbc1/bits_mode.gb  (2 fr, 7.9s) B=03 C=05 D=08 E=0d H=15 L=22
+[168/169] HANG    mooneye/acceptance/rst_timing.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008e84c) PC=0154
+[169/169] HANG    mooneye/misc/ppu/vblank_stat_intr-C.gb  (0 fr, 20.1s) LCD off: call to 0x71000820b0 did not return within 20s (pc=0x710008381c) PC=0168
+done in 254s: {'TIMEOUT': 12, 'FAIL': 85, 'PASS': 36, 'HANG': 29, 'CRASH': 7}

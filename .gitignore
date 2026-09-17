@@ -1,0 +1,38 @@
+# Allowlist: only this project's own work is tracked. Game data, the BIOS, third-party
+# checkouts and build output stay local (see README.md for where they come from).
+/*
+!/.gitignore
+!/README.md
+!/FINDINGS.md
+!/carbon-pc/
+!/tools/
+!/ghidra/
+!/testresults/
+
+# carbon-pc: sources and test scripts only (no build/, no save/)
+/carbon-pc/*
+!/carbon-pc/CMakeLists.txt
+!/carbon-pc/src/
+!/carbon-pc/tests/
+
+# tools: scripts only
+/tools/venv/
+/tools/switchloader/
+/tools/nspx/bin/
+/tools/nspx/obj/
+__pycache__/
+*.pyc
+
+# ghidra: label tables and binary-derived tables, not the database or decompiled C
+/ghidra/Carbon.rep/
+/ghidra/Carbon.gpr
+/ghidra/*.log
+/ghidra/export/*
+!/ghidra/export/functions.tsv
+!/ghidra/export/strings_xrefs.tsv
+
+# testresults: test-ROM results only (ryujinx_audio is captured game audio)
+/testresults/*
+!/testresults/carbon_original/
+!/testresults/carbon_port/
+!/testresults/carbon_original_run.log

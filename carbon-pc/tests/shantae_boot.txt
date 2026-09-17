@@ -1,0 +1,23 @@
+# Launches SHANTAE from the main menu with the real GB core and captures the boot sequence.
+# In-game input: PLUS = GB Start, B = GB A, A = GB B (Carbon's mapping).
+
+470 log launch
++0  hold 4 A
++100 shot 10_ingame_f60
++120 shot 11_ingame_f180
++240 shot 12_ingame_f420
++240 shot 13_ingame_f660
++200 log start
++0  hold 6 PLUS
++120 shot 14_after_start
++120 hold 6 PLUS
++120 shot 15_after_start2
++120 hold 6 B
++120 shot 16_after_a
++180 shot 17_later
++120 log pause
++0  hold 4 ZL+ZR
++40 shot 18_pause
++10 hold 4 B
++60 shot 19_resumed
++30 quit
